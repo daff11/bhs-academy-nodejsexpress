@@ -1,0 +1,96 @@
+<!-- header -->
+<header class="fixed-top header">
+  <!-- top header -->
+  <div class="top-header py-2 bg-gray">
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col-lg-4 text-center text-lg-left">
+          <a class="text-color mr-3" href="tel:+443003030266"><strong>TELP </strong>0811-1162-647</a>
+          <ul class="list-inline d-inline">
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://facebook.com/themefisher/"><i class="ti-facebook"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://twitter.com/themefisher"><i class="ti-twitter-alt"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://instagram.com/themefisher/"><i class="ti-instagram"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-lg-8 text-center text-lg-right">
+          <ul class="list-inline">
+            <li id="login" class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#loginModal" data-toggle="modal" data-target="#loginModal">login</a></li>
+            <li id="register" class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#signupModal" data-toggle="modal" data-target="#signupModal">register</a></li>
+            <li id="jointeacher" class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#teacherModal" data-toggle="modal" data-target="#teacherModal">bhs teaching</a></li>
+            <li class="list-inline-item" id="profileDropdownContainer">
+              <a id="profileToggle" role="button">
+                  <img class="rounded-circle" style="width: 35px; height: 35px;" alt="avatar1" src=""/>
+                  <!-- Gambar User -->
+              </a>
+              <!-- Dropdown yang akan ditampilkan atau disembunyikan -->
+            </li>
+            <li class="list-inline-item" id="userGreeting">
+              <a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#userProfile">
+                  <!-- Nama User -->
+              </a>
+            </li>
+            <li id="myclass" class="list-inline-item bg-primary"><a class="text-uppercase text-white p-sm-2 py-2 px-0 d-inline-block" href="/user/myclass" >my class</a></li>
+            <li id="logout" class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" id="logoutnav">logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- navbar -->
+  <div class="navigation bg-white">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark p-0">
+        <a class="navbar-brand" href="/"><img src="/images/bhs-stp.png" alt="logo" width="90" height="auto"></a>
+        <a class="navbar-brand text-primary navbar-logo" href="/">
+          <strong>BHS Academy</strong>
+        </a>
+        <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
+          aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"><i class="bx bx-menu navbar-icon"></i></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navigation">
+          <ul class="navbar-nav ml-auto text-center">
+            <li class="nav-item @@shortcourses">
+              <a class="nav-link" href="/program/shortcourses">Short Courses</a>
+            </li>
+            <li class="nav-item @@coorporate">
+              <a class="nav-link" href="/program/coorporate">Coorporate Training</a>
+            </li>
+            <li class="nav-item @@projectbased">
+              <a class="nav-link" href="/program/projectbased">Project-Based</a>
+            </li>
+            <li class="nav-item @@prakerja">
+              <a class="nav-link" href="#">Prakerja</a>
+            </li>
+            <li class="nav-item dropdown view @@about">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                About
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/about/about-us">About Us</a></li>
+                <li><a class="dropdown-item" href="/about/faq">FAQ</a></li>
+                <li><a class="dropdown-item" href="#">Our Partenrs</a></li>
+                <li><a class="dropdown-item" href="#">Our Clients</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+<!-- /header -->
+@@include('blocks/register.htm')
+@@include('blocks/login.htm')
+@@include('blocks/modal_teacher.htm')
+
+<!-- Script -->
+<script src="../../js/coorporateScript.js"></script>
+<script src="../../js/projectbasedScript.js"></script>
+<script src="../../js/shortcoursesScript.js"></script>
+<script src="../../js/prakerjaScript.js"></script>
+<script src="../../js/aboutScript.js"></script>
+<script src="../../js/authScript.js"></script>
+<script src="../../js/userScript.js"></script>
+<script src="../../js/myclassScript.js"></script>

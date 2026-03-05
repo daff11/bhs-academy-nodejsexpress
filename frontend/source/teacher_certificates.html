@@ -1,0 +1,32 @@
+@@include('header.htm')
+
+@@include('blocks/sidebar.htm', {"certificates": "active"})
+
+<section class="bg-light">
+    <div class="content">
+        <h2 class="mb-4">Certificates</h2>
+        <p>Check your certificates below!</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Classes</th>
+                    <th>Date Completed</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="certificatesTable">
+                <tr>
+                    <td colspan="4">Loading...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
+@@include('footer.htm')
+
+<script>
+    document.addEventListener("DOMContentLoaded", getCertificates);
+</script>

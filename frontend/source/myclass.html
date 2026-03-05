@@ -1,0 +1,32 @@
+@@include('header.htm')
+
+@@include('blocks/sidebar.htm', {"home": "active"})
+
+<section class="my-class">
+    <div class="content">
+        <h2 class="mb-4">Dashboard</h2>
+        <p>Gives information about your programs and schedules</p>
+
+        <h4 class="mt-6">Class Overview</h4>
+        <!-- Dropdown Menu -->
+        <div class="dropdown-container">
+            <select id="classFilter" class="custom-dropdown">
+                <option value="all" selected>All</option>
+                <option value="in-progress">In Progress</option>
+                <option value="past">Past</option>
+            </select>
+        </div>
+        <div class="row mt-2 myclass">
+            <!-- myclassScript.js -->
+        </div>
+    </div>
+    
+</section>
+
+@@include('footer.htm')
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    getAllMyClass();
+});
+</script>

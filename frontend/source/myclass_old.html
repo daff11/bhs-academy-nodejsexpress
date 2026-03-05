@@ -1,0 +1,128 @@
+@@include('header.htm')
+
+@@include('blocks/navigation.htm')
+
+<section class="page-header-section mt-2 bg-light">
+  <div class="container">
+    <div class="row">
+      <!-- Kolom Kiri: Profil -->
+      <div class="col-md-3 mb-5">
+        <!-- Profil Card -->
+        <div class="card p-4 shadow rounded-lg border-left-0 border-right-0 border-bottom-0 text-primary" style="border-top: solid 3px;">
+          <div class="card-body">
+            <!-- Gambar Profil (Rounded) -->
+            <div class="text-center mb-4" id="profile_image">
+              <img src="" alt="Foto Profil" class="rounded-circle" width="100" height="100">
+            </div>
+            <!-- Username -->
+            <div class="text-center">
+              <h5 class="font-weight-bold" id="username"><!-- Menampilkan user.fullname  --></h5>
+            </div>
+            <!-- Data Diri -->
+            <div class="mb-1">
+              <h6 style="font-size: 13.4px;" class="text-color-mute" id="email_user"><!-- Menampilkan user.email  --></h6>
+              <h6 style="font-size: 13.4px;" class="text-color-mute" id="phone_user"><!-- Menampilkan user.phone  --></h6>
+            </div>
+          </div>
+          <div class="card-body">
+            <!-- Tombol Logout -->
+            <div class="text-center">
+              <a href="/logout" class="btn btn-danger small">Logout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kolom Kanan: Tab Navigasi -->
+      <div class="col-md-9">
+        <!-- <div class="card"> -->
+          <div class="card-body">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <!-- Tab My Class -->
+              <li class="nav-item">
+                <a class="nav-link active btn btn-primary btn-sm" id="class-tab" href="#class" role="tab"
+                  aria-controls="class" aria-selected="false">My Class</h6></a>
+              </li>
+              <!-- Tab Prakerja -->
+              <li class="nav-item">
+                <a class="nav-link btn btn-primary btn-sm" id="prakerja-tab" href="#prakerja" role="tab"
+                  aria-controls="prakerja" aria-selected="false">Prakerja</h6></a>
+              </li>
+              <!-- Tab Payment -->
+              <li class="nav-item">
+                <a class="nav-link btn btn-primary btn-sm" id="payment-tab" href="#payment" role="tab"
+                  aria-controls="payment" aria-selected="false">Payment</h6></a>
+              </li>
+            </ul>
+            <div class="card tab-content rounded-lg" id="myTabContent">
+              <!-- Content My Class -->
+              <div class="tab-pane fade show active" id="class" role="tabpanel" aria-labelledby="class-tab">
+                <div class="card-body">
+                  <div class="row">
+                    <!-- Program Card (My Class) -->
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Content Prakerja -->
+              <div class="tab-pane fade" id="prakerja" role="tabpanel" aria-labelledby="prakerja-tab">
+                <div class="card-body">
+                  <p class='my-2'>Konten untuk tab Prakerja. Di sini Anda dapat menampilkan deskripsi atau konten yang berkaitan dengan kelas Anda.</p>
+                </div>
+              </div>
+              <!-- Content Payment -->
+              <div class="tab-pane fade" id="payment" role="tabpanel" aria-labelledby="payment-tab">
+                <ul class="list-inline filter-controls mt-1" style="text-align: left;">
+                  <li class="list-inline-item m-3 active text-medium" data-filter="detail">All</li>
+                  <li class="list-inline-item m-3 text-medium" data-filter="materi">Pending</li>
+                  <li class="list-inline-item m-3 text-medium" data-filter="pengajar">Completed</li>
+                </ul>
+                <div class="card-body" style="margin-top: -20px;">
+                  <p class='my-2'>Konten untuk tab Payment. Di sini Anda dapat menampilkan deskripsi atau konten yang berkaitan dengan payment Anda.</p>
+                </div>
+              </div>
+
+              <div class="rounded-lg border-left-0 border-right-0 border-bottom-0 text-primary" style="border-top: solid 3px;"></div>
+            </div>
+          </div>
+        <!-- </div> -->
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const tabs = document.querySelectorAll('.nav-link');
+  const tabContents = document.querySelectorAll('.tab-pane');
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', function (event) {
+      event.preventDefault(); // Mencegah aksi default
+
+      // Hapus kelas aktif dari semua tab dan konten
+      tabs.forEach((tab) => {
+        tab.classList.remove('active');
+        tab.setAttribute('aria-selected', 'false'); // Set aria-selected false untuk tab yang tidak aktif
+      });
+      tabContents.forEach((content) => content.classList.remove('show', 'active'));
+
+      // Tambahkan kelas aktif ke tab yang diklik
+      this.classList.add('active');
+      this.setAttribute('aria-selected', 'true'); // Set aria-selected true untuk tab yang diklik
+      
+      // Tampilkan konten yang sesuai dengan tab
+      const targetId = this.getAttribute('href').substring(1);
+      const targetContent = document.getElementById(targetId);
+      if (targetContent) {
+        targetContent.classList.add('show', 'active');
+      }
+    });
+  });
+});
+
+</script>
+@@include('blocks/footer.htm')
+
+@@include('footer.htm')

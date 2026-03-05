@@ -1,0 +1,154 @@
+<section class="bg-white">
+  <!-- Sidebar -->
+  <div id="mySidenav" class="sidenav">
+    <div class="mt-7">
+      <a id="bhs-thumb" class="navbar-brand mt-1" href="/"><img src="/images/bhs-stp.png" alt="logo" width="90" height="auto"></a>
+      <div class="border-bottom border-left-0 border-right-0 border-bottom-0 text-color-light mt-3 mb-2" style="border-top: solid 1px;"></div>
+  
+      <!-- Home Menu -->
+      <a class="sidenav-item @@home" href="/user/myclass"><i class="fa fa-book"></i><span> My Class</span></a>
+  
+      <!-- Prakerja Menu
+      <a class="sidenav-item @@prakerja" href="#clients"><i class="fa fa-graduation-cap"></i><span> Prakerja</span></a> -->
+      
+      <!-- Payments Menu -->
+      <a class="sidenav-item @@payments" href="/user/payments-history"><i class="fa fa-money"></i><span> Payments</span></a>
+      
+      <!-- Certificate Menu -->
+      <a class="sidenav-item @@certificates" href="/user/certificates"><i class="fa fa-certificate"></i><span> Certificate</span></a>
+    </div>
+  </div>
+
+  <!-- Profil Menu -->
+  <div class="profile-menu">
+    <button class="profile-button" id="profileButton">
+      <img class="profile-image" id="profile_image" src="" alt="Profile Picture">
+    </button>
+    <div class="dropdown-menu" id="dropdownMenu">
+      <div class="dropdown-header profileDropdownContainer">
+        <img id="profile--image" src="" alt="Profile Picture">
+        <div class="username" id="username"></div>
+        <div class="email" id="email_user"></div>
+      </div>
+      <a href="#my-profile" class="dropdown-item">My Profile</a>
+      <a href="#change-password" class="dropdown-item">Change Password</a>
+      <a href="#logout" class="dropdown-item" id="logoutLink">Logout</a>
+    </div>
+  </div>
+
+  <!-- Notifications -->
+  <div class="notification-menu">
+    <button class="notification-button" id="notificationButton">
+      <i class="fa fa-bell"></i>
+      <span class="notification-badge" id="notificationBadge" style="display: none;"></span>
+    </button>
+    <div class="notification-dropdown" id="notificationDropdown">
+      <div id="notification-list">
+      <!-- Akan diisi via JS -->
+      </div> 
+    </div>
+  </div>
+
+  <!-- Konten Utama -->
+  <div class="content">
+    <span class="burger-btn" onclick="toggleNav()">&#9776;</span>
+  </div>
+  
+  <!-- Pembatas penuh -->
+  <div class="text-muted mt-3" style="border-bottom: 0.1px solid; width: 100%;"></div>
+</section>
+
+<script>
+  function toggleNav() {
+    const sidebar = document.getElementById("mySidenav");
+    sidebar.classList.toggle("open");
+  }
+
+  // Tutup sidebar jika klik di luar (hanya jika dibuka dengan burger button)
+  document.addEventListener("click", function (event) {
+    const sidebar = document.getElementById("mySidenav");
+    const burgerBtn = document.querySelector(".burger-btn");
+
+    if (!sidebar.contains(event.target) && !burgerBtn.contains(event.target)) {
+      sidebar.classList.remove("open");
+    }
+  });
+
+  const profileButton = document.getElementById('profileButton');
+  const dropdownMenu = document.getElementById('dropdownMenu');
+
+  // Toggle dropdown menu visibility
+  profileButton.addEventListener('click', () => {
+    dropdownMenu.classList.toggle('active');
+  });
+
+  // Klik di luar menu untuk menutupnya
+  document.addEventListener('click', (event) => {
+    if (!profileButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+      dropdownMenu.classList.remove('active');
+    }
+  });
+
+  // Logout functionality
+  document.getElementById('logoutLink').addEventListener('click', function(event) {
+    event.preventDefault();
+
+    // Call logout endpoint
+    fetch('/auth/logout', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include'
+    })
+      .then(response => {
+        if (response.ok) {
+          localStorage.clear();
+          window.location.href = '/';
+        } else {
+          alert('Error logging out. Please try again.');
+        }
+      })
+      .catch(error => console.error('Logout error:', error));
+  });
+
+  //Notif
+  const notifBtn = document.getElementById('notificationButton');
+  const notifDropdown = document.getElementById('notificationDropdown');
+
+  notifBtn.addEventListener('click', (event) => {
+    notifDropdown.classList.toggle('active');
+  });
+
+  // Tutup dropdown jika klik di luar
+  document.addEventListener('click', (event) => {
+    if (!notifBtn.contains(event.target) && !notifDropdown.contains(event.target)) {
+      notifDropdown.classList.remove('active');
+    }
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    getNotifications();
+    updateNotificationBadge();
+
+    const userImage = localStorage.getItem('profileImage');
+
+    if (userImage) {
+      // Terapkan ke semua img terkait
+      const profileImgs = document.querySelectorAll('#profile_image, #profile--image, img.profile-image');
+      profileImgs.forEach(img => {
+        img.src = userImage;
+      });
+    }
+  });
+
+</script>
+
+<script src="../../js/myclassScript.js"></script>
+<script src="../../js/authScript.js"></script>
+<script src="../../js/userScript.js"></script>
+<script src="../../js/certificatesScript.js"></script>
+<script src="../../js/paymentScript.js"></script>
+<script src="../../js/notificationsScript.js"></script>

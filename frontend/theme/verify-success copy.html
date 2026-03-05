@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<!--
+ // WEBSITE: https://themefisher.com
+ // TWITTER: https://twitter.com/themefisher
+ // FACEBOOK: https://www.facebook.com/themefisher
+ // GITHUB: https://github.com/themefisher/
+-->
+
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+	================================================== -->
+  <meta charset="utf-8">
+  <title>BHS Academy</title>
+
+  <!-- Mobile Specific Metas
+	================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Construction Html5 Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Themefisher Educenter HTML Template v1.0">
+  
+  <!-- theme meta -->
+  <meta name="theme-name" content="educenter" />
+
+  <!-- ** Plugins Needed for the Project ** -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+  <!-- DataTables JS -->
+  <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+  <!-- Chart JS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Select2 -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="/plugins/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+  
+  <!-- Font Awesome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- slick slider -->
+  <link rel="stylesheet" href="/plugins/slick/slick.css">
+  <!-- themefy-icon -->
+  <link rel="stylesheet" href="/plugins/themify-icons/themify-icons.css">
+  <!-- box-icon -->
+  <link rel="stylesheet" href="/plugins/boxicons-2.1.4/css/boxicons.css">
+  <!-- animation css -->
+  <link rel="stylesheet" href="/plugins/animate/animate.css">
+  <!-- aos -->
+  <link rel="stylesheet" href="/plugins/aos/aos.css">
+  <!-- venobox popup -->
+  <link rel="stylesheet" href="/plugins/venobox/venobox.css">
+
+  <!-- DataTables CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+  
+  <!-- Main Stylesheet -->
+  <link href="/css/style.css" rel="stylesheet">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="/images/bhs-stp-removed.png" type="image/x-icon">
+  <link rel="icon" href="/images/bhs-stp-removed.png" type="image/x-icon">
+
+</head>
+
+<body>
+  <!-- preloader start -->
+  <div class="preloader">
+    <img src="/images/1496.gif" alt="preloader">
+  </div>
+  <!-- preloader end -->
+  <!-- <script src="js/script.js"></script> -->
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+
+<!-- header -->
+<header class="fixed-top header">
+  <!-- top header -->
+  <div class="top-header py-2 bg-gray">
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col-lg-4 text-center text-lg-left">
+          <a class="text-color mr-3" href="tel:+443003030266"><strong>TELP </strong>0811-1162-647</a>
+          <ul class="list-inline d-inline">
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://facebook.com/themefisher/"><i class="ti-facebook"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://twitter.com/themefisher"><i class="ti-twitter-alt"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://instagram.com/themefisher/"><i class="ti-instagram"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-lg-8 text-center text-lg-right">
+          <ul class="list-inline">
+            <li id="login" class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#loginModal" data-toggle="modal" data-target="#loginModal">login</a></li>
+            <li id="register" class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#signupModal" data-toggle="modal" data-target="#signupModal">register</a></li>
+            <li id="jointeacher" class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#teacherModal" data-toggle="modal" data-target="#teacherModal">bhs teaching</a></li>
+            <li class="list-inline-item" id="profileDropdownContainer">
+              <a id="profileToggle" role="button">
+                  <img class="rounded-circle" style="width: 35px; height: 35px;" alt="avatar1" src=""/>
+                  <!-- Gambar User -->
+              </a>
+              <!-- Dropdown yang akan ditampilkan atau disembunyikan -->
+            </li>
+            <li class="list-inline-item" id="userGreeting">
+              <a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#userProfile">
+                  <!-- Nama User -->
+              </a>
+            </li>
+            <li id="myclass" class="list-inline-item bg-primary"><a class="text-uppercase text-white p-sm-2 py-2 px-0 d-inline-block" href="/user/myclass" >my class</a></li>
+            <li id="logout" class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" id="logoutnav">logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- navbar -->
+  <div class="navigation bg-white">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark p-0">
+        <a class="navbar-brand" href="/"><img src="/images/bhs-stp.png" alt="logo" width="90" height="auto"></a>
+        <a class="navbar-brand text-primary navbar-logo" href="/">
+          <strong>BHS Academy</strong>
+        </a>
+        <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
+          aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"><i class="bx bx-menu navbar-icon"></i></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navigation">
+          <ul class="navbar-nav ml-auto text-center">
+            <li class="nav-item @@shortcourses">
+              <a class="nav-link" href="/program/shortcourses">Short Courses</a>
+            </li>
+            <li class="nav-item @@coorporate">
+              <a class="nav-link" href="/program/coorporate">Coorporate Training</a>
+            </li>
+            <li class="nav-item @@projectbased">
+              <a class="nav-link" href="/program/projectbased">Project-Based</a>
+            </li>
+            <li class="nav-item @@prakerja">
+              <a class="nav-link" href="#">Prakerja</a>
+            </li>
+            <li class="nav-item dropdown view @@about">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                About
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/about/about-us">About Us</a></li>
+                <li><a class="dropdown-item" href="/about/faq">FAQ</a></li>
+                <li><a class="dropdown-item" href="#">Our Partenrs</a></li>
+                <li><a class="dropdown-item" href="#">Our Clients</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+<!-- /header -->
+<!-- Modal Register -->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content rounded-0 border-0 p-4">
+            <div class="modal-header border-0">
+                <h3>Register</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="login">
+                    <form id="registerForm" class="row">
+                        <div class="col-12">
+                            <input required type="text" class="form-control mb-3" id="fullname" name="fullname" placeholder="Your Fullname">
+                        </div>
+                        <div class="col-12">
+                            <input required type="email" class="form-control mb-3" id="email" name="email" placeholder="Your Email">
+                        </div>
+                        <div class="col-12">
+                            <input required type="text" class="form-control mb-3" id="phone" name="phone" placeholder="Your Phone Number">
+                        </div>
+                        <div class="col-12">
+                            <input type="password" 
+                                    class="form-control mb-1" 
+                                    id="password" 
+                                    name="password" 
+                                    minlength="8" 
+                                    required 
+                                    placeholder="At least 8 characters, incl. 1 uppercase, 1 number, 1 symbol">
+                            <small class="form-text text-muted">
+                                Password must be at least 8 characters long and contain at least one uppercase letter, one number, and one special symbol
+                            </small>
+                        </div>
+                        <div class="col-12">
+                            <input required type="password" class="form-control mb-3" id="confirmpassword" name="confirmpassword" placeholder="Password Confirmation">
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">REGISTER</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal LOGIN -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content rounded-0 border-0 p-4">
+            <div class="modal-header border-0">
+                <h3>Login</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="login">
+                    <form id="loginForm" class="row" method="POST">
+                        <div class="col-12">
+                            <input type="text" class="form-control mb-3" id="email" name="email" placeholder="Your Email">
+                        </div>
+                        <div class="col-12 mb-10">
+                            <input type="password" class="form-control mb-3" id="password" name="password" minlength="8" placeholder="Your Password">
+                            <a href="/auth/forgot-password" class="text-decoration-none">Forgot password?</a>
+                        </div>
+                        <!-- Placeholder CAPTCHA -->
+                        <div class="col-12">
+                            <div id="captcha-container" class="g-recaptcha" data-callback="onCaptchaSuccess"></div>
+                            <input type="hidden" id="captchaToken" name="captchaToken">
+                        </div>
+                        <div class="col-12 mt-1">
+                            <button id="loginButton" type="submit" class="btn btn-primary">
+                                LOGIN
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<!-- Modal Teacher -->
+<div class="modal fade" id="teacherModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content rounded-0 border-0 p-4">
+        <div class="modal-header border-0">
+          <ul class="nav nav-tabs w-100 d-flex justify-content-around" id="authTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="register-tab" data-toggle="tab" href="#registerPane" role="tab">
+                <h5 class="card-title" style="font-size: 16px;">Register</h5>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="login-tab" data-toggle="tab" href="#loginPane" role="tab">
+                <h5 class="card-title" style="font-size: 16px;">Login</h5>
+              </a>
+            </li>
+          </ul>
+        </div>
+  
+        <div class="modal-body">
+          <div class="tab-content" id="authTabContent">
+            <!-- Register Form -->
+            <div class="tab-pane fade show active" id="registerPane" role="tabpanel">
+              <form id="teacherRegister" class="row mt-1" method="POST">
+                <div class="col-12">
+                  <input type="text" class="form-control mb-3" id="fullname" name="fullname" placeholder="Your Fullname">
+                </div>
+                <div class="col-12">
+                  <input type="email" class="form-control mb-3" id="emailReg" name="email" placeholder="Your Email">
+                </div>
+                <div class="col-12">
+                  <input type="text" class="form-control mb-3" id="phone" name="phone" placeholder="Your Phone Number">
+                </div>
+                <div class="col-12">
+                  <input type="password" class="form-control mb-3" id="passwordReg" name="password" minlength="8" placeholder="8 Characters at Minimum">
+                </div>
+                <div class="col-12">
+                  <input type="password" class="form-control mb-3" id="confirmpassword" name="confirmpassword" placeholder="Password Confirmation">
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary">REGISTER</button>
+                </div>
+              </form>
+            </div>
+  
+            <!-- Login Form -->
+            <div class="tab-pane fade" id="loginPane" role="tabpanel">
+              <form id="teacherLogin" class="row mt-1" method="POST">
+                <div class="col-12">
+                  <input type="text" class="form-control mb-3" id="emailLogin" name="email" placeholder="Your Email">
+                </div>
+                <div class="col-12">
+                  <input type="password" class="form-control mb-3" id="passwordLogin" name="password" minlength="8" placeholder="Your Password">
+                </div>
+                <div class="col-12">
+                  <!-- Placeholder CAPTCHA -->
+                <div id="teacher-captcha-container" class="g-recaptcha" data-callback="onCaptchaSuccess"></div>
+                  <input type="hidden" id="captchaToken" name="captchaToken">
+                </div>
+                <div class="col-12">
+                  <button id="loginButton" type="submit" class="btn btn-primary">LOGIN</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Load CAPTCHA -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  
+
+<!-- Script -->
+<script src="../../js/coorporateScript.js"></script>
+<script src="../../js/projectbasedScript.js"></script>
+<script src="../../js/shortcoursesScript.js"></script>
+<script src="../../js/prakerjaScript.js"></script>
+<script src="../../js/aboutScript.js"></script>
+<script src="../../js/authScript.js"></script>
+<script src="../../js/userScript.js"></script>
+<script src="../../js/myclassScript.js"></script>
+
+<section class="page-header-section bg-light mt-10" style="min-height: 100vh; display: flex;">
+  <div class="container text-center">
+    <h2 class="section-title" style="font-size: 2rem;"><strong>Verification Success</strong></h2>
+    <a href="/" class="btn btn-primary mt-3">Back to Home</a>
+  </div>
+</section>
+
+<!-- jQuery -->
+<script src="/plugins/jQuery/jquery.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="/plugins/bootstrap/bootstrap.min.js"></script>
+<!-- slick slider -->
+<script src="/plugins/slick/slick.min.js"></script>
+<!-- aos -->
+<script src="/plugins/aos/aos.js"></script>
+<!-- venobox popup -->
+<script src="/plugins/venobox/venobox.min.js"></script>
+<!-- filter -->
+<script src="/plugins/filterizr/jquery.filterizr.min.js"></script>
+<!-- google map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU"></script>
+<script src="/plugins/google-map/gmap.js"></script>
+
+<!-- swiper js -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Snap Midtrans -->
+<script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="CLIENT_KEY"></script>
+
+<!-- Main Script -->
+<script src="/js/script.js"></script>
+
+<!-- Session Check -->
+<script src="/js/sessionManager.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+@@include('header.htm')
+
+@@include('blocks/navigation.htm')
+
+@@include('blocks/page-title.htm', { "page-title" : "Short Courses", "page-link": "/program/shortcourses", "single-page-title":
+"", "description" : "" })
+
+<section class="section-sm">
+  <div class="container">
+      <div class="row">
+          <!-- Kolom Kiri -->
+          <div class="col-lg-8 col-md-7 col-sm-12 mb-4">
+              <img id="gambar_program" src="" class="img-fluid img-course" alt="Course Image">
+
+              <!-- Course Info -->
+              <div class="align-items-center mb-100">
+                <div class="col-xl-8 col-sm-12 mb-4 mb-xl-0 mt-3">
+                    <h2 id="nama_program" class="text-primary" style="font-size: 35px;"></h2>
+                </div>
+                <div class="col-xl-12 col-sm-12 mt-2">
+                  <ul class="list-inline d-flex justify-content-start flex-wrap">
+                    <li class="list-inline-item mr-4 mb-3 mb-sm-0">
+                        <div class="d-flex align-items-center">
+                          <i class="ti-book text-primary icon-lg mr-2"></i>
+                          <div class="text-left">
+                            <h6 class="mb-0"> Categories </h6>
+                            <p id="program_type" class="mb-0"></p>
+                          </div>
+                        </div>
+                    </li>
+                    <li class="list-inline-item mr-4 mb-3 mb-sm-0">
+                      <div class="d-flex align-items-center">
+                        <i class="ti-alarm-clock text-primary icon-lg mr-2"></i>
+                        <div class="text-left">
+                          <h6 class="mb-0">Durasi</h6>
+                          <p id="durasi" class="mb-0"></p>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="mb-100" id="course-details">
+                  <h4 class="text-primary">Detail Program</h4>
+                  <h2>Ketahui programmu</h2>
+                  <p id="detail_program" class="text-large"></p>
+              </div>
+
+              <div class="mb-100" id="lesson">
+                  <h4 class="text-primary">Materi Pembelajaran</h4>
+                  <h2>Apa yang kamu pelajari</h2>
+                  <ul id="lesson_content" class="list-styled mt-2">
+                      <!-- Materi akan dimuat di sini -->
+                  </ul>
+              </div>
+
+              <div class="mb-100" id="prospek">
+                  <h4 class="text-primary">Prospek Kerja</h4>
+                  <h2>Raih pekerjaan impianmu!</h2>
+                  <ul id="prospek_content" class="list-styled mt-2">
+                      <!-- Prospek kerja akan dimuat di sini -->
+                  </ul>
+              </div>
+
+              <div id="teachers" class="mb-100">
+                  <h3 class="text-primary mb-20">Pengajar</h3>
+                  <div id="teachers_content" class="media">
+                      <!-- Pengajar akan dimuat di sini -->
+                  </div>
+                  <div class="border-bottom border-primary mt-6" id="borderend"></div>
+              </div>
+          </div>
+
+          <!-- Kolom Kanan (Floating Box) -->
+          <div class="col-lg-4 col-md-5 col-sm-12">
+              <div class="floating-box floating-box-wrapper">
+                  <h6 class="text-primary mb-10">Detail</h6>
+                  <ul class="list-unstyled">
+                      <li class="mb-10"><a class="text-color text-medium" href="#course-details">Detail Program</a></li>
+                      <li class="mb-10"><a class="text-color text-medium" href="#lesson">Materi Belajar</a></li>
+                      <li class="mb-10"><a class="text-color text-medium" href="#prospek">Prospek kerja kamu</a></li>
+                  </ul>
+                  <div class="border-bottom border-primary mt-2 mb-20"></div>
+                  <h3 id="harga" class="text-primary text-center mb-30"></h3>
+                  <div class="text-center">
+                    <a class="btn btn-primary btn-sm join-now-shortcourses">Join Now</a>
+                  </div>
+              </div>
+
+              <!-- Floating Box Mobile -->
+              <span class="floating-box-mobile">
+                  <div class="content-wrapper">
+                      <span class="text-primary price" id="harga_mobile"></span>
+                      <span class="button-container">
+                        <a class="btn btn-primary btn-sm join-now-shortcourses">Join Now</a>
+                      </span>
+                  </div>
+              </span>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- related course -->
+<section class="section pt-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="section-title">Related Course</h2>
+      </div>
+    </div>
+    <div class="row justify-content-center shortcourses">
+      <!-- shortcoursesScript.js -->
+    </div>
+  </div>
+</section>
+<!-- /related course -->
+
+@@include('blocks/footer.htm')
+
+@@include('footer.htm')
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    getShortCoursesById();
+    get3ShortCourses();
+});
+</script>

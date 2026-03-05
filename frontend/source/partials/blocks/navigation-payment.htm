@@ -1,0 +1,58 @@
+<!-- header -->
+<header class="fixed-top header">
+  <!-- navbar -->
+  <div class="navigation bg-white">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark p-0">
+        <a class="navbar-brand" href="/"><img src="/images/bhs-stp.png" alt="logo" width="90" height="auto"></a>
+        <a class="navbar-brand text-primary navbar-logo" href="/">
+          <strong>BHS Academy</strong>
+        </a>
+        <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
+          aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"><i class="bx bx-menu navbar-icon"></i></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navigation">
+          <ul class="navbar-nav ml-auto text-center">
+            <li class="nav-item @@short-courses">
+              <a class="nav-link" href="/program/shortcourses">Short Courses</a>
+            </li>
+            <li class="nav-item @@coorporate">
+              <a class="nav-link" href="/program/coorporate">Coorporate Training</a>
+            </li>
+            <li class="nav-item @@project-based">
+              <a class="nav-link" href="project-based.html">Project-Based</a>
+            </li>
+            <li class="nav-item @@prakerja">
+              <a class="nav-link" href="prakerja.html">Prakerja</a>
+            </li>
+            <li class="nav-item dropdown view @@about">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                About
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/about/about-us">About Us</a></li>
+                <li><a class="dropdown-item" href="/about/faq">FAQ</a></li>
+                <li><a class="dropdown-item" href="#">Our Partenrs</a></li>
+                <li><a class="dropdown-item" href="#">Our Clients</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+<!-- /header -->
+@@include('blocks/register.htm')
+@@include('blocks/login.htm')
+
+<!-- Script -->
+<script src="../../js/coorporateScript.js"></script>
+<script src="../../js/projectbasedScript.js"></script>
+<script src="../../js/shortcoursesScript.js"></script>
+<script src="../../js/prakerjaScript.js"></script>
+<script src="../../js/aboutScript.js"></script>
+<script src="../../js/authScript.js"></script>
+<script src="../../js/paymentScript.js"></script>

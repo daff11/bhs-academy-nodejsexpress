@@ -1,0 +1,36 @@
+@@include('header.htm')
+
+@@include('blocks/sidebar.htm', {"payments": "active"})
+
+<section class="pay-ments">
+  <div class="content">
+    <h2 class="mb-4">Payments History</h2>
+    <ul class="list-inline filter-controls">
+      <li class="list-inline-item m-3 active text-medium" data-filter="all">All</li>
+      <li class="list-inline-item m-3 text-medium" data-filter="pending">Pending</li>
+      <li class="list-inline-item m-3 text-medium" data-filter="completed">Completed</li>
+    </ul>
+    <div class="mt-2 row paymentHistory">
+      <!-- payment.js -->
+    </div>      
+  </div>
+</section>
+
+@@include('footer.htm')
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  paymentHistory("all");
+
+  const filterButtons = document.querySelectorAll(".filter-controls li");
+  filterButtons.forEach(btn => {
+    btn.addEventListener("click", function () {
+      filterButtons.forEach(b => b.classList.remove("active"));
+      this.classList.add("active");
+
+      const filter = this.getAttribute("data-filter");
+      paymentHistory(filter);
+    });
+  });
+});
+</script>

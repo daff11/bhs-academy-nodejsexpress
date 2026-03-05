@@ -1,0 +1,73 @@
+<!-- Modal Teacher -->
+<div class="modal fade" id="teacherModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content rounded-0 border-0 p-4">
+        <div class="modal-header border-0">
+          <ul class="nav nav-tabs w-100 d-flex justify-content-around" id="authTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="register-tab" data-toggle="tab" href="#registerPane" role="tab">
+                <h5 class="card-title" style="font-size: 16px;">Register</h5>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="login-tab" data-toggle="tab" href="#loginPane" role="tab">
+                <h5 class="card-title" style="font-size: 16px;">Login</h5>
+              </a>
+            </li>
+          </ul>
+        </div>
+  
+        <div class="modal-body">
+          <div class="tab-content" id="authTabContent">
+            <!-- Register Form -->
+            <div class="tab-pane fade show active" id="registerPane" role="tabpanel">
+              <form id="teacherRegister" class="row mt-1" method="POST">
+                <div class="col-12">
+                  <input type="text" class="form-control mb-3" id="fullname" name="fullname" placeholder="Your Fullname">
+                </div>
+                <div class="col-12">
+                  <input type="email" class="form-control mb-3" id="emailReg" name="email" placeholder="Your Email">
+                </div>
+                <div class="col-12">
+                  <input type="text" class="form-control mb-3" id="phone" name="phone" placeholder="Your Phone Number">
+                </div>
+                <div class="col-12">
+                  <input type="password" class="form-control mb-3" id="passwordReg" name="password" minlength="8" placeholder="8 Characters at Minimum">
+                </div>
+                <div class="col-12">
+                  <input type="password" class="form-control mb-3" id="confirmpassword" name="confirmpassword" placeholder="Password Confirmation">
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary">REGISTER</button>
+                </div>
+              </form>
+            </div>
+  
+            <!-- Login Form -->
+            <div class="tab-pane fade" id="loginPane" role="tabpanel">
+              <form id="teacherLogin" class="row mt-1" method="POST">
+                <div class="col-12">
+                  <input type="text" class="form-control mb-3" id="emailLogin" name="email" placeholder="Your Email">
+                </div>
+                <div class="col-12">
+                  <input type="password" class="form-control mb-3" id="passwordLogin" name="password" minlength="8" placeholder="Your Password">
+                </div>
+                <div class="col-12">
+                  <!-- Placeholder CAPTCHA -->
+                <div id="teacher-captcha-container" class="g-recaptcha" data-callback="onCaptchaSuccess"></div>
+                  <input type="hidden" id="captchaToken" name="captchaToken">
+                </div>
+                <div class="col-12">
+                  <button id="loginButton" type="submit" class="btn btn-primary">LOGIN</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Load CAPTCHA -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  

@@ -1,0 +1,35 @@
+@@include('header.htm')
+
+<section class="adminLogin bg-primary" style="min-height: 100vh; display: flex;">
+    <div class="container d-flex justify-content-center align-items-center" style="flex: 1;">
+        <div class="card shadow p-4" style="width: 100%; max-width: 400px; background-color: white; border-radius: 10px;">
+          <h3 class="mb-4 text-primary">Admin Login</h3>
+          <form id="loginAdminForm" method="POST">
+            <div class="form-group mb-3 text-start">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" name="email" required placeholder="Enter email">
+            </div>
+            <div class="form-group mb-4 text-start">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" name="password" required placeholder="Enter password">
+            </div>
+            <button id="loginAdminButton" type="submit" class="btn btn-primary w-100">Login</button>
+          </form>
+        </div>
+    </div>
+</section>
+
+<script src="../../js/authScript.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("loginAdminForm");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    await loginAdmin();
+  });
+});
+</script>
+
+@@include('footer.htm')

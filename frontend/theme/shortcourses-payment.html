@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<!--
+ // WEBSITE: https://themefisher.com
+ // TWITTER: https://twitter.com/themefisher
+ // FACEBOOK: https://www.facebook.com/themefisher
+ // GITHUB: https://github.com/themefisher/
+-->
+
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+	================================================== -->
+  <meta charset="utf-8">
+  <title>BHS Academy</title>
+
+  <!-- Mobile Specific Metas
+	================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Construction Html5 Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Themefisher Educenter HTML Template v1.0">
+  
+  <!-- theme meta -->
+  <meta name="theme-name" content="educenter" />
+
+  <!-- ** Plugins Needed for the Project ** -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+  <!-- DataTables JS -->
+  <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+  <!-- Chart JS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Select2 -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="/plugins/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+  
+  <!-- Font Awesome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- slick slider -->
+  <link rel="stylesheet" href="/plugins/slick/slick.css">
+  <!-- themefy-icon -->
+  <link rel="stylesheet" href="/plugins/themify-icons/themify-icons.css">
+  <!-- box-icon -->
+  <link rel="stylesheet" href="/plugins/boxicons-2.1.4/css/boxicons.css">
+  <!-- animation css -->
+  <link rel="stylesheet" href="/plugins/animate/animate.css">
+  <!-- aos -->
+  <link rel="stylesheet" href="/plugins/aos/aos.css">
+  <!-- venobox popup -->
+  <link rel="stylesheet" href="/plugins/venobox/venobox.css">
+
+  <!-- DataTables CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+  
+  <!-- Main Stylesheet -->
+  <link href="/css/style.css" rel="stylesheet">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="/images/bhs-stp-removed.png" type="image/x-icon">
+  <link rel="icon" href="/images/bhs-stp-removed.png" type="image/x-icon">
+
+</head>
+
+<body>
+  <!-- preloader start -->
+  <div class="preloader">
+    <img src="/images/1496.gif" alt="preloader">
+  </div>
+  <!-- preloader end -->
+  <!-- <script src="js/script.js"></script> -->
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+
+<!-- header -->
+<header class="fixed-top header">
+  <!-- navbar -->
+  <div class="navigation bg-white">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark p-0">
+        <a class="navbar-brand" href="/"><img src="/images/bhs-stp.png" alt="logo" width="90" height="auto"></a>
+        <a class="navbar-brand text-primary navbar-logo" href="/">
+          <strong>BHS Academy</strong>
+        </a>
+        <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
+          aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"><i class="bx bx-menu navbar-icon"></i></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navigation">
+          <ul class="navbar-nav ml-auto text-center">
+            <li class="nav-item @@short-courses">
+              <a class="nav-link" href="/program/shortcourses">Short Courses</a>
+            </li>
+            <li class="nav-item @@coorporate">
+              <a class="nav-link" href="/program/coorporate">Coorporate Training</a>
+            </li>
+            <li class="nav-item @@project-based">
+              <a class="nav-link" href="project-based.html">Project-Based</a>
+            </li>
+            <li class="nav-item @@prakerja">
+              <a class="nav-link" href="prakerja.html">Prakerja</a>
+            </li>
+            <li class="nav-item dropdown view @@about">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                About
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/about/about-us">About Us</a></li>
+                <li><a class="dropdown-item" href="/about/faq">FAQ</a></li>
+                <li><a class="dropdown-item" href="#">Our Partenrs</a></li>
+                <li><a class="dropdown-item" href="#">Our Clients</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+<!-- /header -->
+<!-- Modal Register -->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content rounded-0 border-0 p-4">
+            <div class="modal-header border-0">
+                <h3>Register</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="login">
+                    <form id="registerForm" class="row">
+                        <div class="col-12">
+                            <input required type="text" class="form-control mb-3" id="fullname" name="fullname" placeholder="Your Fullname">
+                        </div>
+                        <div class="col-12">
+                            <input required type="email" class="form-control mb-3" id="email" name="email" placeholder="Your Email">
+                        </div>
+                        <div class="col-12">
+                            <input required type="text" class="form-control mb-3" id="phone" name="phone" placeholder="Your Phone Number">
+                        </div>
+                        <div class="col-12">
+                            <input type="password" 
+                                    class="form-control mb-1" 
+                                    id="password" 
+                                    name="password" 
+                                    minlength="8" 
+                                    required 
+                                    placeholder="At least 8 characters, incl. 1 uppercase, 1 number, 1 symbol">
+                        </div>
+                        <div class="col-12">
+                            <input required type="password" class="form-control mb-3" id="confirmpassword" name="confirmpassword" placeholder="Password Confirmation">
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">REGISTER</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal LOGIN -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content rounded-0 border-0 p-4">
+            <div class="modal-header border-0">
+                <h3>Login</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="login">
+                    <form id="loginForm" class="row" method="POST">
+                        <div class="col-12">
+                            <input type="text" class="form-control mb-3" id="email" name="email" placeholder="Your Email">
+                        </div>
+                        <div class="col-12 mb-10">
+                            <input type="password" class="form-control mb-3" id="password" name="password" minlength="8" placeholder="Your Password">
+                            <a href="/auth/forgot-password" class="text-decoration-none">Forgot password?</a>
+                        </div>
+                        <!-- Placeholder CAPTCHA -->
+                        <div class="col-12">
+                            <div id="captcha-container" class="g-recaptcha" data-callback="onCaptchaSuccess"></div>
+                            <input type="hidden" id="captchaToken" name="captchaToken">
+                        </div>
+                        <div class="col-12 mt-1">
+                            <button id="loginButton" type="submit" class="btn btn-primary">
+                                LOGIN
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<!-- Script -->
+<script src="../../js/coorporateScript.js"></script>
+<script src="../../js/projectbasedScript.js"></script>
+<script src="../../js/shortcoursesScript.js"></script>
+<script src="../../js/prakerjaScript.js"></script>
+<script src="../../js/aboutScript.js"></script>
+<script src="../../js/authScript.js"></script>
+<script src="../../js/paymentScript.js"></script>
+
+<section class="page-header-section bg-light">
+  <div class="container">
+    <h2 class="section-title" style="font-size: 2rem;"><strong>Payment Details</strong></h2>
+    <div class="row mt-70">
+      <!-- payment details -->
+      <div class="col-8">
+        <h3 class="section-title" id="nama_program"></h3>
+        <ul class="list-inline mb-2">
+          <li class="list-inline-item bg-third padds"><a class="text-primary" href="/program/shortcoursesall"><strong id="program_type"></strong> </a></li>
+          <li class="list-inline-item bg-third padds"><i class="ti-alarm-clock mr-1 text-primary"></i><strong class="text-primary" id="durasi_jamhari"></strong> </li>
+        </ul>
+        <ul class="list-inline filter-controls">
+          <li class="list-inline-item m-3 active text-medium" data-filter="detail">Detail</li>
+          <li class="list-inline-item m-3 text-medium" data-filter="materi">Course</li>
+          <li class="list-inline-item m-3 text-medium" data-filter="pengajar">Teacher</li>
+        </ul>
+
+        <div class="filtr-container">
+          <!-- Detail -->
+          <div data-category="detail" class="card rounded-0 hover-shadow border-top-0 border-left-0 border-right-0 filtr-item w-100">
+            <div class="card-body">
+              <p class="text-medium" id="detail_program"></p>
+            </div>
+          </div>
+          <!-- /Detail -->
+           
+          <!-- Materi -->
+          <div data-category="materi" class="card rounded-0 hover-shadow border-top-0 border-left-0 border-right-0 filtr-item w-100">
+            <div class="card-body">
+              <ul class="list-styled text-primary text-medium" id="lesson_content">
+                <!-- Detail Materi -->
+              </ul>
+            </div>
+          </div>
+          <!-- /Materi -->
+
+          <!-- Pengajar -->
+          <div data-category="pengajar" class="card rounded-0 hover-shadow border-top-0 border-left-0 border-right-0 filtr-item w-100">
+            <div class="card-body">
+              <div class="media" id="teachers_content">
+                <!-- Detail Pengajar -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /Pengajar -->
+      </div>
+      <!-- /payment details -->
+
+      <!-- checkout -->
+      <div class="col-4">
+        <div class="card rounded-0 border-left-0 border-right-0 border-bottom-0 text-primary" style="border-top: solid 3px;">
+          <!-- <hr class="text-primary" style="border: solid 1.5px;"> -->
+          <div class="card-body">
+            <h5 class="section-title">Price List</h5>
+            <div class="d-flex justify-content-between align-items-center">
+              <h6 class="text-color-mute" id="checkout_nama_program"></h6>
+              <h6 class="text-color-mute" id="harga"></h6>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <h6 class="text-color-mute">Discount/h6>
+              <h6 class="text-color-mute" id="diskon">-</h6>
+            </div>
+          </div>
+        </div>
+        <div class="card rounded-0 border-left-0 border-right-0 border-bottom-0 text-color" style="border-top: solid 1px;">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+              <h6 class="text-color-mute">Total</h6>
+              <h6 class="text-color-mute" id="amount"></h6>
+            </div>
+            <div class="text-center text-large mt-4">
+              <!-- Di bawah adalah button untuk melanjutkan pembayaran ke snap -->
+              <a id="pay-button" class="btn btn-primary btn-sm">Continue to payment</a> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /checkout -->
+    </div>
+  </div>
+</section>
+
+
+<!-- jQuery -->
+<script src="/plugins/jQuery/jquery.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="/plugins/bootstrap/bootstrap.min.js"></script>
+<!-- slick slider -->
+<script src="/plugins/slick/slick.min.js"></script>
+<!-- aos -->
+<script src="/plugins/aos/aos.js"></script>
+<!-- venobox popup -->
+<script src="/plugins/venobox/venobox.min.js"></script>
+<!-- filter -->
+<script src="/plugins/filterizr/jquery.filterizr.min.js"></script>
+<!-- google map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU"></script>
+<script src="/plugins/google-map/gmap.js"></script>
+
+<!-- swiper js -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Snap Midtrans -->
+<script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="CLIENT_KEY"></script>
+
+<!-- Main Script -->
+<script src="/js/script.js"></script>
+
+<!-- Session Check -->
+<script src="/js/sessionManager.js"></script>
+
+</body>
+</html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        getShortCoursesPaymentById();
+        shortcoursePayment();
+    });
+</script>

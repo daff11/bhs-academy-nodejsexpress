@@ -1,0 +1,66 @@
+@@include('header.htm')
+@@include('blocks/navigation-payment.htm')
+
+<section class="page-header-section bg-light mt-3" style="min-height: 100vh; display: flex;"> 
+  <div class="container text-center" id="payment-container">
+    <h2 class="section-title mb-4" id="payment-deadline" style="font-size: 1.5rem;"></h2>
+    <h2 class="section-title mb-4 text-primary" id="amount" style="font-size: 2.5rem;"></h2>
+
+    <!-- Grid Pilihan Bank -->
+    <div class="form-group mt-4" style="max-width: 400px; margin: 0 auto;">
+      <label for="payment-method-select"><strong>Select Payment Method</strong></label>
+      <select id="payment-method-select" class="form-control">
+        <option disabled selected>-- Pilih --</option>
+        <optgroup label="Bank Transfers">
+          <option value="bca">BCA</option>
+          <option value="bni">BNI</option>
+          <option value="bri">BRI</option>
+          <option value="mandiri">Mandiri</option>
+          <option value="cimb">CIMB</option>
+        </optgroup>
+        <optgroup label="E-Wallet">
+          <option value="dana">Dana</option>
+          <option value="ovo">OVO</option>
+          <option value="spaylater">Spay Later</option>
+        </optgroup>
+      </select>
+    </div>
+
+    <!-- Info pembayaran -->
+    <div id="payment-info" class="mt-4" style="display: none; max-width: 600px; margin: 0 auto;">
+      <div class="card">
+        <div class="card-body">
+          <p><strong>Methods:</strong> <span id="bank-name">-</span></p>
+          <p><strong>Virtual Account Numbers:</strong> <span id="va-number">-</span>
+            <i class="fa fa-clone text-color" onclick="copyVA()" style="cursor: pointer; margin-left: 8px;"></i>
+          </p>
+        </div>
+      </div>
+    
+      <h5 class="mt-4">Instruksi Pembayaran</h5>
+      <ul id="instructions-list" class="text-left mx-auto"></ul>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', async function () {
+    await createPendingTransaction(); // <--- BUAT TRANSAKSI DULU
+    initPaymentCategorySelector();    // <--- DROPDOWN METHOD
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const autoMethod = urlParams.get("method");
+
+    if (autoMethod) {
+        // Auto-trigger pilihan VA
+        const dropdown = document.getElementById("payment-method-select");
+        dropdown.value = autoMethod;
+
+        // Trigger manual event supaya listener tetap jalan
+        const event = new Event("change");
+        dropdown.dispatchEvent(event);
+    }
+});
+</script>
+
+@@include('footer.htm')

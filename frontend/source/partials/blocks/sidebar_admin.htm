@@ -1,0 +1,117 @@
+<section class="sidebar_admin bg-primary">
+  <!-- Sidebar -->
+  <div id="mySidenav-admin" class="sidenav-admin">
+    <div class="mt-4 px-3">
+      <a href="/" class="navbar-brand d-block mb-4 text-center">
+        <img src="/images/bhs-stp.png" alt="logo" width="90">
+      </a>
+
+      <a class="sidenav-admin-item @@home" href="/admin/dashboard">Home</a>
+      <a class="sidenav-admin-item @@programs" href="/admin/programs">Programs</a>
+      <a class="sidenav-admin-item @@lessons" href="/admin/lessons">Lessons</a>
+      <a class="sidenav-admin-item @@prospects" href="/admin/prospects">Prospects</a>
+      <a class="sidenav-admin-item @@teachers" href="/admin/teachers">Teachers</a>
+      <a class="sidenav-admin-item @@payments" href="/admin/payments">Payments</a>
+      <a class="sidenav-admin-item @@users" href="/admin/users">Users</a>
+    </div>
+  </div>
+
+  <!-- Burger button (muncul hanya di mobile) -->
+  <div class="content">
+    <span class="burger-btn text-white" onclick="toggleNav()">&#9776;</span>
+  </div>
+
+  <!-- Profil Menu -->
+  <div class="profile-menu">
+    <button class="profile-button" id="profileButton">
+      <div class="username mr-3 text-white" id="username"></div>
+      <img class="bg-white" id="profile_image" src="" alt="Profile Picture">
+    </button>
+    <div class="dropdown-menu" id="dropdownMenu" style="margin-left: 70px;">
+      <a href="#my-profile" class="dropdown-item">Profile</a>
+      <a href="#change-password" class="dropdown-item">Change Password</a>
+      <a href="#logout" class="dropdown-item text-danger" id="logoutLink">Logout</a>
+    </div>
+  </div>
+  
+  <!-- Pembatas penuh -->
+  <div class="text-muted mt-3" style="border-bottom: 0.1px solid; width: 100%;"></div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const adminName = localStorage.getItem('adminName');
+    const adminImage = localStorage.getItem('adminImage');
+
+    if (adminName && adminImage) {
+      document.getElementById('username').textContent = adminName;
+
+      const profileImgs = document.querySelectorAll('img.profile_image, #profile_image');
+      profileImgs.forEach(img => {
+        img.src = adminImage || '/images/default-admin.jpg';
+      });
+    }
+  });
+
+</script>
+
+<script>
+  function toggleNav() {
+    const sidebar = document.getElementById("mySidenav-admin");
+    sidebar.classList.toggle("open");
+  }
+
+  // Tutup sidebar jika klik di luar (hanya jika dibuka dengan burger button)
+  document.addEventListener("click", function (event) {
+    const sidebar = document.getElementById("mySidenav-admin");
+    const burgerBtn = document.querySelector(".burger-btn");
+
+    if (!sidebar.contains(event.target) && !burgerBtn.contains(event.target)) {
+      sidebar.classList.remove("open");
+    }
+  });
+
+  const profileButton = document.getElementById('profileButton');
+  const dropdownMenu = document.getElementById('dropdownMenu');
+
+  // Toggle dropdown menu visibility
+  profileButton.addEventListener('click', () => {
+    dropdownMenu.classList.toggle('active');
+  });
+
+  // Klik di luar menu untuk menutupnya
+  document.addEventListener('click', (event) => {
+    if (!profileButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+      dropdownMenu.classList.remove('active');
+    }
+  });
+
+  // Logout functionality
+  document.getElementById('logoutLink').addEventListener('click', function(event) {
+    event.preventDefault();
+
+    // Call logout endpoint
+    fetch('/auth/logout', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include'
+    })
+      .then(response => {
+        if (response.ok) {
+          localStorage.clear();
+          window.location.href = '/';
+        } else {
+          alert('Error logging out. Please try again.');
+        }
+      })
+      .catch(error => console.error('Logout error:', error));
+  });
+</script>
+
+<script src="../../js/myclassScript.js"></script>
+<script src="../../js/authScript.js"></script>
+<script src="../../js/adminProfileScript.js"></script>
+<script src="../../js/certificatesScript.js"></script>
+<script src="../../js/adminScript.js"></script> 

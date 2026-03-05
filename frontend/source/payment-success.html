@@ -1,0 +1,50 @@
+@@include('header.htm')
+@@include('blocks/navigation-payment.htm')
+
+<section class="page-header-section bg-light">
+  <div class="container text-center">
+    <!-- 1. Teks utama -->
+    <h2 class="section-title mb-4" style="font-size: 2rem;"><strong>Payment Success</strong></h2>
+    <!-- Gambar ceklis -->
+    <dotlottie-player src="https://lottie.host/1503d28b-1783-4a69-8ec2-27fc563659ae/c4EE2uoTwH.lottie" 
+      background="transparent" 
+      speed="1" 
+      style="width: 200px; height: 200px; display: block; margin: 0 auto;" 
+      loop autoplay>
+    </dotlottie-player>
+
+    <!-- Payment Info -->
+    <div class="mt-4" id="purchase-detail" style="display: block;">
+      <h5 class="mb-3">Details</h5>
+      <ul class="list-unstyled">
+        <li><strong>Program:</strong> <span id="program-name"></span></li>
+        <li><strong>Harga:</strong> <span id="program-price"></span></li>
+        <li><strong>Tanggal:</strong> <span id="purchase-date"></span></li>
+      </ul>
+    </div>
+    
+
+    <!-- 2. Tombol Aksi -->
+    <div class="d-flex justify-content-center gap-7 mt-5">
+      <div class="col-2 mt-2">
+        <a href="/" class="text-primary">Back to Home</a>
+      </div>
+      <div class="col-2">
+        <a href="/user/myclass" class="btn btn-primary">My Class</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+@@include('footer.htm')
+
+<script
+  src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+  type="module"
+></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      paymentSuccess();
+  });
+</script>

@@ -1,0 +1,136 @@
+@@include('header.htm')
+
+@@include('blocks/sidebar_admin.htm', {"programs": "active"})
+
+<section class="adminDashboard pl-170 bg-light full-page-contain">
+  <div class="content">
+    <h2 class="mb-4" id="programsTitle">Programs Form</h2>
+
+    <!-- Form Add Program (hidden default) -->
+    <div id="formAddProgram" class="card">
+      <h3 class="mb-4">Add New Program</h3>
+      <form id="programForm">
+
+        <div class="mb-3">
+          <label>Nama Program</label>
+          <input type="text" class="form-control" name="nama_program" required>
+        </div>
+
+        <div class="mb-3">
+          <label>Type</label>
+          <select class="form-control" name="type" required>
+              <!-- Dropdown Type diisi dengan data dari API -->
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label>Upload Image (jpg/png, max 4MB)</label>
+          <input type="file" class="form-control" name="gambar" id="gambarUpload" accept="image/jpeg, image/png" required>
+        </div>        
+
+        <div class="mb-3">
+          <label>Detail</label>
+          <textarea class="form-control" name="detail"></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label>Durasi</label>
+          <input type="text" class="form-control" name="durasi" placeholder="Jam">
+        </div>
+
+        <div class="mb-3">
+          <label>Harga</label>
+          <input type="number" class="form-control" name="harga" placeholder="Rp">
+        </div>
+
+        <!-- Lessons -->
+        <div class="mb-4">
+          <label>Lessons</label>
+          <div id="lessonsContainer"></div>
+          <button type="button" class="btn btn-success btn-sm mt-2" id="addLessonBtn">+ Lesson</button>
+        </div>
+
+        <!-- Prospects -->
+        <div class="mb-4">
+          <label>Prospects</label>
+          <div id="prospectsContainer"></div>
+          <button type="button" class="btn btn-success btn-sm mt-2" id="addProspectBtn">+ Prospect</button>
+        </div>
+
+        <!-- Teachers -->
+        <div class="mb-4">
+          <label>Teachers</label>
+          <div id="teachersContainer"></div>
+          <button type="button" class="btn btn-success btn-sm mt-2" id="addTeacherBtn">+ Teacher</button>
+        </div>
+
+        <!-- Chapters -->
+        <div class="mb-4">
+          <label>Chapters</label>
+          <div id="chaptersContainer"></div>
+          <button type="button" class="btn btn-success btn-sm mt-2" id="addChapterBtn">+ Chapter</button>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-sm">Save Program</button>
+
+      </form>
+    </div>
+
+    <!-- Modal Add Chapter -->
+    <div class="modal fade" id="chapterModal" tabindex="-1" aria-labelledby="chapterModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form id="chapterForm">
+            <div class="modal-header">
+              <h5 class="modal-title" id="chapterModalLabel">Add Chapter</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+              <div class="mb-3">
+                <label>Title (required)</label>
+                <input type="text" class="form-control" name="chapter_title" required>
+              </div>
+
+              <div class="mb-3">
+                <label>Video Link (YouTube only)</label>
+                <input type="url" class="form-control" name="chapter_video">
+              </div>
+
+              <div class="mb-3">
+                <label>Description</label>
+                <textarea class="form-control" name="chapter_description"></textarea>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-success btn-sm">Save Chapter</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+@@include('footer.htm')
+
+<script>
+  let chaptersData = [];
+
+document.addEventListener('DOMContentLoaded', function () {
+  loadLessons();
+  loadProspects();
+  loadTeachers();
+  loadProgramTypes();
+  updateChaptersView();
+
+  document.getElementById('programForm').addEventListener('submit', handleProgramSubmit);
+  document.getElementById('addLessonBtn').addEventListener('click', () => createDropdownWithActions('lessonsContainer', window.lessonsData, 'lessons[]'));
+  document.getElementById('addProspectBtn').addEventListener('click', () => createDropdownWithActions('prospectsContainer', window.prospectsData, 'prospects[]'));
+  document.getElementById('addTeacherBtn').addEventListener('click', () => createDropdownWithActions('teachersContainer', window.teachersData, 'teachers[]'));
+  document.getElementById('addChapterBtn').addEventListener('click', showChapterModal);
+  document.getElementById('chapterForm').addEventListener('submit', handleChapterSubmit);
+});
+</script>

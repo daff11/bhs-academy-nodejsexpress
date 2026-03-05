@@ -1,0 +1,97 @@
+@@include('header.htm')
+@@include('blocks/navigation-payment.htm')
+
+<section class="page-header-section bg-light">
+  <div class="container">
+    <h2 class="section-title" style="font-size: 2rem;"><strong>Payment Details</strong></h2>
+    <div class="row mt-70">
+      <!-- payment details -->
+      <div class="col-8">
+        <h3 class="section-title" id="nama_program"></h3>
+        <ul class="list-inline mb-2">
+          <li class="list-inline-item bg-third padds"><a class="text-primary" href="/program/projectbased"><strong id="program_type"></strong> </a></li>
+          <li class="list-inline-item bg-third padds"><i class="ti-alarm-clock mr-1 text-primary"></i><strong class="text-primary" id="durasi_jamhari"></strong> </li>
+        </ul>
+        <ul class="list-inline filter-controls">
+          <li class="list-inline-item m-3 active text-medium" data-filter="detail">Detail</li>
+          <li class="list-inline-item m-3 text-medium" data-filter="materi">Course</li>
+          <li class="list-inline-item m-3 text-medium" data-filter="pengajar">Teacher</li>
+        </ul>
+
+        <div class="filtr-container">
+          <!-- Detail -->
+          <div data-category="detail" class="card rounded-0 hover-shadow border-top-0 border-left-0 border-right-0 filtr-item w-100">
+            <div class="card-body">
+              <p class="text-medium" id="detail_program"></p>
+            </div>
+          </div>
+          <!-- /Detail -->
+           
+          <!-- Materi -->
+          <div data-category="materi" class="card rounded-0 hover-shadow border-top-0 border-left-0 border-right-0 filtr-item w-100">
+            <div class="card-body">
+              <ul class="list-styled text-primary text-medium" id="lesson_content">
+                <!-- Detail Materi -->
+              </ul>
+            </div>
+          </div>
+          <!-- /Materi -->
+
+          <!-- Pengajar -->
+          <div data-category="pengajar" class="card rounded-0 hover-shadow border-top-0 border-left-0 border-right-0 filtr-item w-100">
+            <div class="card-body">
+              <div class="media" id="teachers_content">
+                <!-- Detail Pengajar -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /Pengajar -->
+      </div>
+      <!-- /payment details -->
+
+      <!-- checkout -->
+      <div class="col-4">
+        <div class="card rounded-0 border-left-0 border-right-0 border-bottom-0 text-primary" style="border-top: solid 3px;">
+          <!-- <hr class="text-primary" style="border: solid 1.5px;"> -->
+          <div class="card-body">
+            <h5 class="section-title">Price List</h5>
+            <div class="d-flex justify-content-between align-items-center">
+              <h6 class="text-color-mute" id="checkout_nama_program"></h6>
+              <h6 class="text-color-mute" id="harga"></h6>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <h6 class="text-color-mute">Discount/h6>
+              <h6 class="text-color-mute" id="diskon">-</h6>
+            </div>
+          </div>
+        </div>
+        <div class="card rounded-0 border-left-0 border-right-0 border-bottom-0 text-color" style="border-top: solid 1px;">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+              <h6 class="text-color-mute">Total</h6>
+              <h6 class="text-color-mute" id="amount"></h6>
+            </div>
+            <div class="text-center text-large mt-4">
+              <!-- Di bawah adalah button untuk melanjutkan pembayaran ke snap -->
+              <a id="pay-button" class="btn btn-primary btn-sm">Continue to payment</a> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /checkout -->
+    </div>
+  </div>
+</section>
+
+
+@@include('footer.htm')
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Ada di projectbasedScript.js
+      getProjectBasedPaymentById();
+      // Ada di paymentScript.js
+      projectbasedPayment(); 
+    });
+</script>

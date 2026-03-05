@@ -1,0 +1,50 @@
+@@include('header.htm')
+
+@@include('blocks/sidebar_admin.htm', {"programs": "active"})
+
+<section class="adminDashboard pl-170 bg-light full-page-contain">
+  <div class="content mt-3">
+    <h2 class="mb-4" id="programsTitle">Programs</h2>
+    <p id="programsDesc">Manages the programs</p>
+
+    <button id="btnAddProgram" class="btn btn-primary btn-sm mb-3">Add Programs</button>
+
+    <!-- Tabel Program -->
+    <div id="programsTableCard" class="card p-3">
+      <div class="table-scroll" style="overflow-x: auto; width: 100%;">
+        <table id="programsTable" class="table table-striped table-hover nowrap" style="width:100%;">
+          <thead>
+            <tr class="bg-primary text-white">
+              <th>Actions</th>
+              <th>Program</th>
+              <th>Type</th>
+              <th>Image</th>
+              <th>Detail</th>
+              <th>Price</th>
+              <th>Discount</th>
+              <th>Chapters</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Data masuk lewat JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+@@include('footer.htm')
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    getPrograms();
+    
+    const btnAddProgram = document.getElementById('btnAddProgram');
+    btnAddProgram.addEventListener('click', function() {
+        window.location.href = '/program/add'; // ganti path sesuai filemu
+    });
+});
+
+</script>

@@ -1,0 +1,52 @@
+@@include('header.htm')
+
+@@include('blocks/navigation.htm', {"about": "active"})
+
+@@include('blocks/page-title.htm', {
+  "page-title" : "Frequently Asked Questions" , 
+  "single-page-title" : "" , 
+  "description" : 
+  "Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.", 
+})
+
+<!-- Faq Section -->
+<section id="faq" class="faq section">
+  <div class="container">
+    <h2>Look Some Tips</h2>
+    <div class="faq-container">
+      <!-- Faq Item -->
+      <div class="faq-item">
+        <h3>What is your return policy?</h3>
+        <div class="faq-content">
+          <p>Our return policy lasts 30 days. If 30 days have gone by since your purchase, unfortunately, we can’t offer you a refund or exchange.</p>
+        </div>
+        <i class="bx bx-chevron-up faq-toggle"></i>
+      </div>
+      <!-- End Faq Item -->
+
+      <div class="faq-item">
+        <h3>Do you offer international shipping?</h3>
+        <div class="faq-content" style="max-height: 0; opacity: 0;">
+          <p>Yes, we ship to over 100 countries worldwide. Shipping costs will apply, and will be added at checkout.</p>
+        </div>
+        <i class="bx bx-chevron-up faq-toggle"></i>
+      </div>
+      <!-- End Faq Item -->
+
+      <div class="faq-item">
+        <h3>How can I track my order?</h3>
+        <div class="faq-content" style="max-height: 0; opacity: 0;">
+          <p>You will receive an email once your order ships that contains your tracking information.</p>
+        </div>
+        <i class="bx bx-chevron-up faq-toggle"></i>
+      </div>
+      <!-- End Faq Item -->
+
+    </div>
+  </div>
+</section>
+<!-- /Faq Section -->
+
+@@include('blocks/footer.htm')
+
+@@include('footer.htm')

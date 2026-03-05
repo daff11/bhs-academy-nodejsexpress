@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<!--
+ // WEBSITE: https://themefisher.com
+ // TWITTER: https://twitter.com/themefisher
+ // FACEBOOK: https://www.facebook.com/themefisher
+ // GITHUB: https://github.com/themefisher/
+-->
+
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+	================================================== -->
+  <meta charset="utf-8">
+  <title>BHS Academy</title>
+
+  <!-- Mobile Specific Metas
+	================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Construction Html5 Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Themefisher Educenter HTML Template v1.0">
+  
+  <!-- theme meta -->
+  <meta name="theme-name" content="educenter" />
+
+  <!-- ** Plugins Needed for the Project ** -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+  <!-- DataTables JS -->
+  <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+  <!-- Chart JS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Select2 -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="/plugins/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+  
+  <!-- Font Awesome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- slick slider -->
+  <link rel="stylesheet" href="/plugins/slick/slick.css">
+  <!-- themefy-icon -->
+  <link rel="stylesheet" href="/plugins/themify-icons/themify-icons.css">
+  <!-- box-icon -->
+  <link rel="stylesheet" href="/plugins/boxicons-2.1.4/css/boxicons.css">
+  <!-- animation css -->
+  <link rel="stylesheet" href="/plugins/animate/animate.css">
+  <!-- aos -->
+  <link rel="stylesheet" href="/plugins/aos/aos.css">
+  <!-- venobox popup -->
+  <link rel="stylesheet" href="/plugins/venobox/venobox.css">
+
+  <!-- DataTables CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+  
+  <!-- Main Stylesheet -->
+  <link href="/css/style.css" rel="stylesheet">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="/images/bhs-stp-removed.png" type="image/x-icon">
+  <link rel="icon" href="/images/bhs-stp-removed.png" type="image/x-icon">
+
+</head>
+
+<body>
+  <!-- preloader start -->
+  <div class="preloader">
+    <img src="/images/1496.gif" alt="preloader">
+  </div>
+  <!-- preloader end -->
+  <!-- <script src="js/script.js"></script> -->
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+
+
+<section class="bg-white">
+  <!-- Sidebar -->
+  <div id="mySidenav" class="sidenav">
+    <div class="mt-7">
+      <a id="bhs-thumb" class="navbar-brand mt-1" href="/"><img src="/images/bhs-stp.png" alt="logo" width="90" height="auto"></a>
+      <div class="border-bottom border-left-0 border-right-0 border-bottom-0 text-color-light mt-3 mb-2" style="border-top: solid 1px;"></div>
+  
+      <!-- Home Menu -->
+      <a class="sidenav-item active" href="/user/myclass"><i class="fa fa-book"></i><span> My Class</span></a>
+  
+      <!-- Prakerja Menu
+      <a class="sidenav-item @@prakerja" href="#clients"><i class="fa fa-graduation-cap"></i><span> Prakerja</span></a> -->
+      
+      <!-- Payments Menu -->
+      <a class="sidenav-item @@payments" href="/user/payments-history"><i class="fa fa-money"></i><span> Payments</span></a>
+      
+      <!-- Certificate Menu -->
+      <a class="sidenav-item @@certificates" href="/user/certificates"><i class="fa fa-certificate"></i><span> Certificate</span></a>
+    </div>
+  </div>
+
+  <!-- Profil Menu -->
+  <div class="profile-menu">
+    <button class="profile-button" id="profileButton">
+      <img class="profile-image" id="profile_image" src="" alt="Profile Picture">
+    </button>
+    <div class="dropdown-menu" id="dropdownMenu">
+      <div class="dropdown-header profileDropdownContainer">
+        <img id="profile--image" src="" alt="Profile Picture">
+        <div class="username" id="username"></div>
+        <div class="email" id="email_user"></div>
+      </div>
+      <a href="#my-profile" class="dropdown-item">My Profile</a>
+      <a href="#change-password" class="dropdown-item">Change Password</a>
+      <a href="#logout" class="dropdown-item" id="logoutLink">Logout</a>
+    </div>
+  </div>
+
+  <!-- Notifications -->
+  <div class="notification-menu">
+    <button class="notification-button" id="notificationButton">
+      <i class="fa fa-bell"></i>
+      <span class="notification-badge" id="notificationBadge" style="display: none;"></span>
+    </button>
+    <div class="notification-dropdown" id="notificationDropdown">
+      <div id="notification-list">
+      <!-- Akan diisi via JS -->
+      </div> 
+    </div>
+  </div>
+
+  <!-- Konten Utama -->
+  <div class="content">
+    <span class="burger-btn" onclick="toggleNav()">&#9776;</span>
+  </div>
+  
+  <!-- Pembatas penuh -->
+  <div class="text-muted mt-3" style="border-bottom: 0.1px solid; width: 100%;"></div>
+</section>
+
+<script>
+  function toggleNav() {
+    const sidebar = document.getElementById("mySidenav");
+    sidebar.classList.toggle("open");
+  }
+
+  // Tutup sidebar jika klik di luar (hanya jika dibuka dengan burger button)
+  document.addEventListener("click", function (event) {
+    const sidebar = document.getElementById("mySidenav");
+    const burgerBtn = document.querySelector(".burger-btn");
+
+    if (!sidebar.contains(event.target) && !burgerBtn.contains(event.target)) {
+      sidebar.classList.remove("open");
+    }
+  });
+
+  const profileButton = document.getElementById('profileButton');
+  const dropdownMenu = document.getElementById('dropdownMenu');
+
+  // Toggle dropdown menu visibility
+  profileButton.addEventListener('click', () => {
+    dropdownMenu.classList.toggle('active');
+  });
+
+  // Klik di luar menu untuk menutupnya
+  document.addEventListener('click', (event) => {
+    if (!profileButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+      dropdownMenu.classList.remove('active');
+    }
+  });
+
+  // Logout functionality
+  document.getElementById('logoutLink').addEventListener('click', function(event) {
+    event.preventDefault();
+
+    // Call logout endpoint
+    fetch('/auth/logout', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include'
+    })
+      .then(response => {
+        if (response.ok) {
+          localStorage.clear();
+          window.location.href = '/';
+        } else {
+          alert('Error logging out. Please try again.');
+        }
+      })
+      .catch(error => console.error('Logout error:', error));
+  });
+
+  //Notif
+  const notifBtn = document.getElementById('notificationButton');
+  const notifDropdown = document.getElementById('notificationDropdown');
+
+  notifBtn.addEventListener('click', (event) => {
+    notifDropdown.classList.toggle('active');
+  });
+
+  // Tutup dropdown jika klik di luar
+  document.addEventListener('click', (event) => {
+    if (!notifBtn.contains(event.target) && !notifDropdown.contains(event.target)) {
+      notifDropdown.classList.remove('active');
+    }
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    getNotifications();
+    updateNotificationBadge();
+
+    const userImage = localStorage.getItem('profileImage');
+
+    if (userImage) {
+      // Terapkan ke semua img terkait
+      const profileImgs = document.querySelectorAll('#profile_image, #profile--image, img.profile-image');
+      profileImgs.forEach(img => {
+        img.src = userImage;
+      });
+    }
+  });
+
+</script>
+
+<script src="../../js/myclassScript.js"></script>
+<script src="../../js/authScript.js"></script>
+<script src="../../js/userScript.js"></script>
+<script src="../../js/certificatesScript.js"></script>
+<script src="../../js/paymentScript.js"></script>
+<script src="../../js/notificationsScript.js"></script>
+
+<section class="my-class">
+    <div class="content">
+        <h2 class="mb-4">Dashboard</h2>
+        <p>Gives information about your programs and schedules</p>
+
+        <h4 class="mt-6">Class Overview</h4>
+        <!-- Dropdown Menu -->
+        <div class="dropdown-container">
+            <select id="classFilter" class="custom-dropdown">
+                <option value="all" selected>All</option>
+                <option value="in-progress">In Progress</option>
+                <option value="past">Past</option>
+            </select>
+        </div>
+        <div class="row mt-2 myclass">
+            <!-- myclassScript.js -->
+        </div>
+    </div>
+    
+</section>
+
+<!-- jQuery -->
+<script src="/plugins/jQuery/jquery.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="/plugins/bootstrap/bootstrap.min.js"></script>
+<!-- slick slider -->
+<script src="/plugins/slick/slick.min.js"></script>
+<!-- aos -->
+<script src="/plugins/aos/aos.js"></script>
+<!-- venobox popup -->
+<script src="/plugins/venobox/venobox.min.js"></script>
+<!-- filter -->
+<script src="/plugins/filterizr/jquery.filterizr.min.js"></script>
+<!-- google map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU"></script>
+<script src="/plugins/google-map/gmap.js"></script>
+
+<!-- swiper js -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Snap Midtrans -->
+<script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="CLIENT_KEY"></script>
+
+<!-- Main Script -->
+<script src="/js/script.js"></script>
+
+<!-- Session Check -->
+<script src="/js/sessionManager.js"></script>
+
+</body>
+</html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    getAllMyClass();
+});
+</script>

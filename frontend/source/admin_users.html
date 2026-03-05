@@ -1,0 +1,42 @@
+@@include('header.htm')
+
+@@include('blocks/sidebar_admin.htm', {"users": "active"})
+
+<section class="adminDashboard pl-170 bg-light full-page-contain">
+  <div class="content mt-3">
+    <h2 class="mb-4" id="programsTitle">Users Management</h2>
+
+    <!-- Tabel Program -->
+    <div id="usersTableCard" class="card p-3">
+      <div class="table-scroll" style="overflow-x: auto; width: 100%;">
+        <table id="usersTable" class="table table-striped table-hover nowrap" style="width:100%;">
+          <thead>
+            <tr class="bg-primary text-white">
+              <th>Actions</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Active</th>
+              <th>Date Created</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Data masuk lewat JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+@@include('footer.htm')
+
+<script src="/js/adminUsersScript.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  loadUsersTable();
+});
+
+</script>

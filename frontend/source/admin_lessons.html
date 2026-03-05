@@ -1,0 +1,63 @@
+@@include('header.htm')
+
+@@include('blocks/sidebar_admin.htm', {"lessons": "active"})
+
+<section class="adminDashboard pl-170 bg-light full-page-contain">
+  <div class="content mt-3">
+    <h2 class="mb-4" id="programsTitle">Lessons</h2>
+    <p id="programsDesc">Manages the lessons</p>
+
+    <button id="btnAddLesson" class="btn btn-primary btn-sm mb-3">Add Lessons</button>
+
+    <!-- Tabel Program -->
+    <div id="lessonsTableCard" class="card p-3">
+      <div class="table-scroll" style="overflow-x: auto; width: 100%;">
+        <table id="lessonsTable" class="table table-striped table-hover nowrap" style="width:100%;">
+          <thead>
+            <tr class="bg-primary text-white">
+              <th>No</th>
+              <th>Name</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Data masuk lewat JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Modal Add -->
+    <div class="modal fade" id="lessonModal" tabindex="-1" aria-labelledby="lessonModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form id="lessonForm">
+            <div class="modal-header">
+              <h5 class="modal-title" id="lessonModalLabel">Add Lesson</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <input type="hidden" id="lesson_id" />
+              
+              <div class="mb-3">
+                <label>Name</label>
+                <input type="text" class="form-control" name="lesson_name" required>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-success btn-sm">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+@@include('footer.htm')
+
+<script src="/js/adminLessonsScript.js"></script>

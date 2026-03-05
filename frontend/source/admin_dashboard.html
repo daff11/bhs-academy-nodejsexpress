@@ -1,0 +1,51 @@
+@@include('header.htm')
+
+@@include('blocks/sidebar_admin.htm', {"home": "active"})
+
+<section class="adminDashboard pl-170 bg-light full-page-contain">
+    <div class="content col-md-9 mt-3">
+        <h2 class="mb-4">Dashboard</h2>
+        
+        <!-- Summary Cards -->
+        <div class="row mb-4" id="summaryCards">
+            <div class="col-md-3">
+                <div class="card text-center p-3">
+                    <h5 class="text-left text-primary">Total Program</h5>
+                    <p id="totalPrograms" class="display-6 text-dark">0</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center p-3">
+                    <h5 class="text-left text-primary">Total Teacher</h5>
+                    <p id="totalTeachers" class="display-6 text-dark">0</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center p-3">
+                    <h5 class="text-left text-primary">Total User</h5>
+                    <p id="totalUsers" class="display-6 text-dark">0</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grafik Pembelian -->
+        <div class="card mt-4 p-4 col-md-6 position-relative">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h5 class="text-primary mb-0">Purchased Programs</h5>
+                <span id="updatedAtLabel" class="text-muted small"></span>
+            </div>
+            <canvas id="purchaseChart" height="100"></canvas>
+        </div>
+    </div>
+</section>
+
+@@include('footer.htm')
+
+<script src="/js/adminDashboardScript.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', async () => {
+        await loadDashboardSummary();
+        await loadPurchaseChart();
+    });
+</script>

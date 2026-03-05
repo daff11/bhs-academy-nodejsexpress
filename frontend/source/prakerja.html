@@ -1,0 +1,29 @@
+@@include('header.htm')
+
+@@include('blocks/navigation.htm', {"prakerja": "active"})
+
+@@include('blocks/page-title.htm', {
+  "page-title" : "Prakerja" ,
+  "page-link" : "prakerja.html" ,  
+  "description" : 
+  "Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.",
+  "single-page-title" : "" , 
+})
+
+<!-- courses -->
+<section class="section">
+  <div class="container">
+    <form>
+      <div class="search" id="search">
+        <i class='search-icon bx bx-search-alt-2'></i>
+        <input class="search-input" type="search" placeholder="Cari Disini...">
+      </div>
+    </form>
+    @@include('blocks/prakerja.htm')
+  </div>
+</section>
+<!-- /courses -->
+
+@@include('blocks/footer.htm')
+
+@@include('footer.htm')
